@@ -1,18 +1,19 @@
 package org.example.lesson_1
 
+const val SECONDS_IN_HOUR = 3600
+const val SECONDS_IN_MINUTE = 60
+
 fun main() {
-    val totalSeconds: Int = 6480
+    // Константы
 
-    val hours: Int = totalSeconds / 3600
-    val remainingSecondsAfterHours: Int = totalSeconds % 3600
 
-    val minutes: Int = remainingSecondsAfterHours / 60
-    val seconds: Int = remainingSecondsAfterHours % 60
+    val totalSeconds = 6480
 
-    val formattedHours = String.format("%02d", hours)
-    val formattedMinutes = String.format("%02d", minutes)
-    val formattedSeconds = String.format("%02d", seconds)
+    val hours = totalSeconds / SECONDS_IN_HOUR
+    val remainingSecondsAfterHours = totalSeconds % SECONDS_IN_HOUR
 
-    println("[$formattedHours:$formattedMinutes:$formattedSeconds]")
+    val minutes = remainingSecondsAfterHours / SECONDS_IN_MINUTE
+    val seconds = remainingSecondsAfterHours % SECONDS_IN_MINUTE
 
+    println("%02d:%02d:%02d".format(hours, minutes, seconds))
 }
