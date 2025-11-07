@@ -9,6 +9,6 @@ fun main() {
     val numberOfStudents = 4
     val average = (grade1 + grade2 + grade3 + grade4) / numberOfStudents
 
-   println("%.2f".format(average))
+    println("%.2f".format(average))
 
 }
