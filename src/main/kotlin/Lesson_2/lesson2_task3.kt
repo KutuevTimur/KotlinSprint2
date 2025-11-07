@@ -1,15 +1,18 @@
 package org.example.Lesson_2
 
+const val MINUTES_IN_HOUR = 60
+const val HOURS_IN_DAY = 24
+
 fun main() {
 
-    val departureHour: Int = 9
-    val departureMinute: Int = 39
-    val travelTimeMinutes: Int = 457
+    val departureHour = 9
+    val departureMinute = 39
+    val travelTimeMinutes = 457
 
-    val totalMinutes: Int = departureHour * 60 + departureMinute + travelTimeMinutes
-    val arrivalHour = (totalMinutes / 60 ) % 24
-    val arrivalMinute = totalMinutes % 60
+    val totalMinutes = departureHour * MINUTES_IN_HOUR + departureMinute + travelTimeMinutes
+    val arrivalHour = (totalMinutes / MINUTES_IN_HOUR ) % HOURS_IN_DAY
+    val arrivalMinute = totalMinutes % MINUTES_IN_HOUR
 
-    println("${"%02d".format(arrivalHour)}:${"%02d".format(arrivalMinute)}")
+    println("%02d:%02d".format(arrivalHour, arrivalMinute))
 
 }
