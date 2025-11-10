@@ -1,19 +1,13 @@
 package org.example.lesson_4
 
-import kotlin.io.path.fileVisitor
-
 fun main() {
     val trainingDay = 5
-
-    val isArmsDay = trainingDay % 2 == 1
-    val isLegDay = !isArmsDay
-    val isBackDay = !isArmsDay
-    val isAbsDay = isArmsDay
+    val isOddDay = trainingDay % 2 != 0
 
     println(
-        "Упражнения для рук:    $isArmsDay\n" +
-                "Упражнения для ног:    $isLegDay\n" +
-                "Упражнения для спины:  $isBackDay\n" +
-                "Упражнения для пресса: $isAbsDay"
+        "Упражнения для рук:    $isOddDay\n" +
+                "Упражнения для ног:    ${!isOddDay}\n" +
+                "Упражнения для спины:  ${!isOddDay}\n" +
+                "Упражнения для пресса: $isOddDay"
     )
 }
