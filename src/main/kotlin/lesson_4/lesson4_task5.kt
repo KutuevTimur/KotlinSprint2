@@ -4,11 +4,11 @@ const val MIN_CREW_MAIN = 55
 const val MAX_CREW_MAIN = 70
 const val MIN_PROVISION_MAIN = 50
 const val RECOMMENDED_CREW_ALT = 70
-const val MIN_PROVISION_ALT = 50
+
 
 fun main() {
     print("Есть ли повреждения корпуса (true/false): ")
-    val hasDamage = readLine()!!.toBoolean()
+    val hasDamage = readln().toBoolean()
 
     print("Введите количество человек экипажа: ")
     val crew = readLine()!!.toInt()
@@ -19,11 +19,11 @@ fun main() {
     print("Благоприятны ли метеоусловия (true/false): ")
     val weatherFavorable = readLine()!!.toBoolean()
 
-    val canSail = ((!hasDamage && crew >= MIN_CREW_MAIN) &&
-            (crew <= MAX_CREW_MAIN) &&
-            (provision > MIN_PROVISION_MAIN)) ||
-            ((hasDamage && crew == RECOMMENDED_CREW_ALT) &&
-                    (weatherFavorable && provision >= MIN_PROVISION_ALT))
+    val canSail = (!hasDamage && crew >= MIN_CREW_MAIN &&
+            crew <= MAX_CREW_MAIN &&
+            provision > MIN_PROVISION_MAIN) ||
+            (hasDamage && crew == RECOMMENDED_CREW_ALT &&
+                    weatherFavorable && provision >= MIN_PROVISION_MAIN)
 
     println("Может ли корабль отправиться в плавание? $canSail")
 }
