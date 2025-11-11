@@ -1,8 +1,10 @@
 package org.example.lesson_5
 
+import kotlin.random.Random
+
 fun main() {
-    val winNumber1 = 5
-    val winNumber2 = 28
+    val winNumber1 = Random.nextInt(0, 43)
+    val winNumber2 = Random.nextInt(0, 43)
 
     println("Угадайте 2 числа от 0 до 42 для выигрыша в лотерее!")
     print("Введите первое число: ")
@@ -12,10 +14,9 @@ fun main() {
 
     val guessedFirst = userNumber1 == winNumber1 || userNumber1 == winNumber2
     val guessedSecond = userNumber2 == winNumber1 || userNumber2 == winNumber2
-    val guessedBoth = guessedFirst && guessedSecond
 
     when {
-        guessedBoth -> println("Поздравляем! Вы выиграли главный приз!")
+        guessedFirst && guessedSecond -> println("Поздравляем! Вы выиграли главный приз!")
         guessedFirst || guessedSecond -> println("Вы выиграли утешительный приз!")
         else -> println("Неудача!")
     }
